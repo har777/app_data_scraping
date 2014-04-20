@@ -29,7 +29,7 @@ class MySpider(CrawlSpider):
     start_urls = ["http://www.appexplorer.com/?so=&q="+final_app[0].replace(" ","+").replace("'","").replace("Android","").replace("iOS","")]
     #+final_app[0].replace(" ","+").replace("'","").replace("Android","")
 
-    rules = (Rule (SgmlLinkExtractor(allow=("/?so=&q=.*","/a/*",))
+    rules = (Rule (SgmlLinkExtractor(allow=("/?so=&q=.*","/a/*","/?q=&pg={\d+:\d+\}&dev=",))
     , callback="parse_items", follow= True),
     )
 
